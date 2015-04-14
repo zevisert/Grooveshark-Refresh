@@ -2,11 +2,14 @@
     <string name="app_name">Grooveshark Refresh</string>
 
     <string name="title_text">Grooveshark Refresh Project</string>
-    <string name="main_button">Update TextView</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="main_button">Submit</string>
     <string name="reset_button">Reset</string>
     <string name="action_settings">Settings</string>
     <string name="hint">Search…</string>
     <string name="Recents">Recent Searches</string>
     <string name="Share">Share</string>
+    <string name="login">Login</string>
 
 </resources>

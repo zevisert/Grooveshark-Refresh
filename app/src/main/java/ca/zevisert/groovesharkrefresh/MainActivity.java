@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -59,7 +60,7 @@ public class MainActivity extends Activity{
         mainButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 mainTextView.setText(mainEditText.getText().toString());
-                mArrayList.add(mainEditText.getText().toString());
+                mArrayList.add(mainTextView.getText().toString());
                 mainEditText.setText(null);
                 mArrayAdapter.notifyDataSetChanged();
             }
@@ -90,9 +91,12 @@ public class MainActivity extends Activity{
         mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                mainTextView.setText((String)mArrayList.get(position));
                 Log.d("[GS REFRESH]", position + ": " + mArrayList.get(position));
             }
         });
+
+        setVolumeControlStream(AudioManager.STREAM_MUSIC);
         displayWelcome();
     }
 
@@ -167,4 +171,5 @@ public class MainActivity extends Activity{
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
